@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@font-face {
+	font-family: 'VarelaRound';
+	src: url('/fonts/VarelaRound-Regular.ttf');
+}
+
+:root [data-theme='site_theme'] {
+    --theme-font-family-base: 'VarelaRound', sans-serif;
+    --theme-font-family-heading: 'VarelaRound', sans-serif;
+}
+
+html,
+body {
+	@apply h-full overflow-hidden;
+}
