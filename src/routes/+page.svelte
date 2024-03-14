@@ -1,6 +1,17 @@
+<script lang="ts">
+	import TypeIt from "typeit";
+	import { onMount } from "svelte";
+
+	let typeit: HTMLSpanElement;
+
+	onMount(() => {
+    	new TypeIt(typeit).type("Welcome to my site").pause(300).delete(7).pause(300).type("<code class=\"code h2\">luke.systems</code>.").go();
+	});
+</script>
+
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
-		<h2 class="h2">Welcome to <code class="code h2">luke.systems</code>.</h2>
+		<h2 class="h2"><span bind:this={typeit}></span></h2>
 		<div class="flex justify-center space-x-2">
 			<a href="/about" class="btn variant-filled-error">What is this?</a>
 		</div>
