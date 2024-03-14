@@ -1,6 +1,6 @@
 <script lang="ts">
-	import TypeIt from "typeit";
 	import { onMount } from "svelte";
+	import TypeIt from "typeit";
 
 	let typeit: HTMLSpanElement;
 
@@ -11,7 +11,7 @@
 
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
-		<h2 class="h2"><span bind:this={typeit}></span></h2>
+		<h1 class="h2"><span bind:this={typeit}></span></h1>
 		<div class="flex justify-center space-x-2">
 			<a href="/about" class="btn variant-filled-error">What is this?</a>
 		</div>

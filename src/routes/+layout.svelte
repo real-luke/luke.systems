@@ -2,6 +2,8 @@
 	import '../app.postcss';
 	import { page } from '$app/stores';
 	import { AppShell, AppBar, TabGroup, TabAnchor } from '@skeletonlabs/skeleton';
+	
+	import { fly } from "svelte/transition";
 
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
@@ -22,6 +24,8 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
+	export let data;
 </script>
 
 <!-- App Shell -->
@@ -41,5 +45,10 @@
 		</AppBar>
 	</svelte:fragment>
 	<!-- Page Route Content -->
-	<slot />
+	
+	{#key data.url}
+		<div class="h-full" in:fly={{ x: 200, duration: 300, delay: 300 }} out:fly={{ x: -200, duration: 300}}>
+			<slot />
+		</div>
+	{/key}
 </AppShell>
