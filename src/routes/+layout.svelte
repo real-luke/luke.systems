@@ -30,7 +30,7 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">LUKE'S SITE</strong>
+				<a href="/"><strong class="text-xl uppercase">LUKE'S SITE</strong></a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<TabGroup>
