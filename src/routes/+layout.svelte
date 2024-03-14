@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
+	import { page } from '$app/stores';
+	import { AppShell, AppBar, TabGroup, TabAnchor } from '@skeletonlabs/skeleton';
 
 	// Highlight JS
 	import hljs from 'highlight.js/lib/core';
@@ -32,30 +33,10 @@
 				<strong class="text-xl uppercase">LUKE'S SITE</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://discord.gg/EXqV7W8MtY"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Discord
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://twitter.com/SkeletonUI"
-					target="_blank"
-					rel="noreferrer"
-				>
-					Twitter
-				</a>
-				<a
-					class="btn btn-sm variant-ghost-surface"
-					href="https://github.com/skeletonlabs/skeleton"
-					target="_blank"
-					rel="noreferrer"
-				>
-					GitHub
-				</a>
+				<TabGroup>
+					<TabAnchor href="/" selected={$page.url.pathname === '/'}>Home</TabAnchor>
+					<TabAnchor href="/about" selected={$page.url.pathname === '/about'}>About</TabAnchor>
+				</TabGroup>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
