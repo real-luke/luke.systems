@@ -1,3 +1,12 @@
+<svelte:head>
+	<title>Luke's Site</title>
+	<meta content="Solario+" property="og:title" />
+	<meta content="A chrome extension that adds helpful features to Solario." property="og:description" />
+	<meta content="https://luke.systems/solario-plus" property="og:url" />
+	<meta content="https://luke.systems/solario-plus.png" property="og:image" />
+	<meta content="#43B581" name="theme-color" />
+</svelte:head>
+
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center flex flex-col items-center">
 		<img src="/solario-plus.png" alt="Solario+"/>
